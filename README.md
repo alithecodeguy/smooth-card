@@ -4,6 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/smooth-card.svg)](https://www.npmjs.com/package/smooth-card) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+<div align="center">
+    <img src="./demo.gif" width="450">
+</div>
+
 ## Install
 
 ```bash
