@@ -1,28 +1,23 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-export const SmoothCard = ({ text }) => {
+const ExampleComponent = ({ size, data }) => {
+  const [selectedCard, setSelectedCard] = React.useState(data[0].id)
   return (
-    <div class='container'>
-      <div
-        class='panel active'
-        style="background-image: url('./assets/a1.jpeg')"
-      >
-        <h3>a1</h3>
-      </div>
-      <div class='panel' style="background-image: url('./assets/a2.jpeg')">
-        <h3>a2</h3>
-      </div>
-      <div class='panel' style="background-image: url('./assets/a3.jpeg')">
-        <h3>a3</h3>
-      </div>
-      <div class='panel' style="background-image: url('./assets/a4.jpeg')">
-        <h3>a4</h3>
-      </div>
-      <div class='panel' style="background-image: url('./assets/a5.jpeg')">
-        <h3>a5</h3>
-      </div>
+    <div className={styles.container} style={{ height: size.height }}>
+      {data.map((card) => (
+        <div
+          className={`${styles.panel} ${
+            card.id === selectedCard && styles.active
+          } `}
+          style={{ backgroundImage: `url(${card.url})` }}
+          onClick={() => setSelectedCard(card.id)}
+        >
+          <h3>{card.content}</h3>
+        </div>
+      ))}
     </div>
   )
-  return <div className={styles.test}>Example Component: {text}</div>
 }
+
+export default ExampleComponent
